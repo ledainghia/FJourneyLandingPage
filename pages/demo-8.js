@@ -19,6 +19,7 @@ export default function Home8() {
       <Layout
         headerStyle={1}
         footerStyle={4}
+        headTitle={'FJourney'}
         headerCls='navbar-light white-scroll'
       >
         <Hero8 />
