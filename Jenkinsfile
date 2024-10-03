@@ -4,15 +4,15 @@ pipeline {
     stages {
         stage('Packaging') {
             steps {
-                    sh 'docker build --pull --rm -f Dockerfile -t FjourneyLandingPage:latest .'
+                    sh 'docker build --pull --rm -f Dockerfile -t fjourneyLandingPage:latest .'
             }
         }
 
         stage('Push to DockerHub') {
             steps {
                 withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/') {
-                    sh 'docker tag FjourneyLandingPage:latest chalsfptu/FjourneyLandingPage:latest'
-                    sh 'docker push chalsfptu/FjourneyLandingPage:latest'
+                    sh 'docker tag fjourneyLandingPage:latest chalsfptu/fjourneyLandingPage:latest'
+                    sh 'docker push chalsfptu/fjourneyLandingPage:latest'
                 }
             }
         }
@@ -20,9 +20,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying and cleaning'
-                sh 'docker container stop FjourneyLandingPage || echo "this container does not exist"'
+                sh 'docker container stop fjourneyLandingPage || echo "this container does not exist"'
                 sh 'echo y | docker system prune'
-                sh 'docker container run -d --name FjourneyLandingPage -p 3030:3000 chalsfptu/FjourneyLandingPage'
+                sh 'docker container run -d --name fjourneyLandingPage -p 3030:3000 chalsfptu/fjourneyLandingPage'
             }
         }
     }
