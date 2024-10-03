@@ -10,8 +10,8 @@ export default function Hero8() {
                   FJourney - Giải pháp đi lại thông minh, bảo vệ môi trường
                 </h2>
                 <p className='p-md'>
-                  Chúng tôi mang đến giải pháp cho vấn đề giao thông đô và giảm
-                  thiểu quá tải nhà xe.{' '}
+                  Chúng tôi mang đến giải pháp cho vấn đề giao thông đô thị và
+                  giảm thiểu quá tải nhà xe.{' '}
                   <span className='fw-bold'>FJourney</span> là ứng dụng giúp bạn
                   dễ dàng kết nối với những người đi chung đường, giúp tiết kiệm
                   chi phí, thời gian và giảm thiểu tình trạng kẹt xe, góp phần
